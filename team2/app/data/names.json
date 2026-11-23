@@ -1,0 +1,781 @@
+{
+ "_note": "사람이 관리하는 이름표. ml/build_options.py 가 집계표의 항공사·공항에 이 이름을 붙여 airlines.json, airports.json 을 만든다. 여기 없는 공항은 station_map.csv 이름을 다듬어 영문으로만 쓴다.",
+ "airlines": {
+  "WN": {
+   "name": "Southwest Airlines",
+   "name_ko": "사우스웨스트항공"
+  },
+  "DL": {
+   "name": "Delta Air Lines",
+   "name_ko": "델타항공"
+  },
+  "AA": {
+   "name": "American Airlines",
+   "name_ko": "아메리칸항공"
+  },
+  "OO": {
+   "name": "SkyWest Airlines",
+   "name_ko": "스카이웨스트"
+  },
+  "UA": {
+   "name": "United Airlines",
+   "name_ko": "유나이티드항공"
+  },
+  "YX": {
+   "name": "Republic Airways",
+   "name_ko": "리퍼블릭항공"
+  },
+  "MQ": {
+   "name": "Envoy Air",
+   "name_ko": "엔보이항공"
+  },
+  "OH": {
+   "name": "PSA Airlines",
+   "name_ko": "PSA항공"
+  },
+  "AS": {
+   "name": "Alaska Airlines",
+   "name_ko": "알래스카항공"
+  },
+  "B6": {
+   "name": "JetBlue Airways",
+   "name_ko": "제트블루"
+  },
+  "F9": {
+   "name": "Frontier Airlines",
+   "name_ko": "프론티어항공"
+  },
+  "NK": {
+   "name": "Spirit Airlines",
+   "name_ko": "스피릿항공"
+  },
+  "G4": {
+   "name": "Allegiant Air",
+   "name_ko": "얼리전트항공"
+  },
+  "HA": {
+   "name": "Hawaiian Airlines",
+   "name_ko": "하와이안항공"
+  }
+ },
+ "airports": {
+  "ORD": {
+   "name": "Chicago O'Hare",
+   "name_ko": "시카고 오헤어"
+  },
+  "DEN": {
+   "name": "Denver",
+   "name_ko": "덴버"
+  },
+  "DFW": {
+   "name": "Dallas/Fort Worth",
+   "name_ko": "댈러스/포트워스"
+  },
+  "ATL": {
+   "name": "Atlanta",
+   "name_ko": "애틀랜타"
+  },
+  "PHX": {
+   "name": "Phoenix",
+   "name_ko": "피닉스"
+  },
+  "CLT": {
+   "name": "Charlotte",
+   "name_ko": "샬럿"
+  },
+  "LAX": {
+   "name": "Los Angeles",
+   "name_ko": "로스앤젤레스"
+  },
+  "LAS": {
+   "name": "Las Vegas",
+   "name_ko": "라스베이거스"
+  },
+  "SEA": {
+   "name": "Seattle",
+   "name_ko": "시애틀"
+  },
+  "MCO": {
+   "name": "Orlando",
+   "name_ko": "올랜도"
+  },
+  "SFO": {
+   "name": "San Francisco",
+   "name_ko": "샌프란시스코"
+  },
+  "BOS": {
+   "name": "Boston",
+   "name_ko": "보스턴"
+  },
+  "DCA": {
+   "name": "Washington Reagan",
+   "name_ko": "워싱턴 레이건"
+  },
+  "LGA": {
+   "name": "New York LaGuardia",
+   "name_ko": "뉴욕 라과디아"
+  },
+  "DTW": {
+   "name": "Detroit",
+   "name_ko": "디트로이트"
+  },
+  "EWR": {
+   "name": "Newark",
+   "name_ko": "뉴어크"
+  },
+  "IAH": {
+   "name": "Houston Intercontinental",
+   "name_ko": "휴스턴 인터컨티넨털"
+  },
+  "SLC": {
+   "name": "Salt Lake City",
+   "name_ko": "솔트레이크시티"
+  },
+  "MSP": {
+   "name": "Minneapolis",
+   "name_ko": "미니애폴리스"
+  },
+  "MIA": {
+   "name": "Miami",
+   "name_ko": "마이애미"
+  },
+  "BNA": {
+   "name": "Nashville",
+   "name_ko": "내슈빌"
+  },
+  "JFK": {
+   "name": "New York JFK",
+   "name_ko": "뉴욕 JFK"
+  },
+  "PHL": {
+   "name": "Philadelphia",
+   "name_ko": "필라델피아"
+  },
+  "SAN": {
+   "name": "San Diego",
+   "name_ko": "샌디에이고"
+  },
+  "BWI": {
+   "name": "Baltimore/Washington",
+   "name_ko": "볼티모어/워싱턴"
+  },
+  "FLL": {
+   "name": "Fort Lauderdale",
+   "name_ko": "포트로더데일"
+  },
+  "AUS": {
+   "name": "Austin",
+   "name_ko": "오스틴"
+  },
+  "TPA": {
+   "name": "Tampa",
+   "name_ko": "탬파"
+  },
+  "MDW": {
+   "name": "Chicago Midway",
+   "name_ko": "시카고 미드웨이"
+  },
+  "DAL": {
+   "name": "Dallas Love Field",
+   "name_ko": "댈러스 러브필드"
+  },
+  "STL": {
+   "name": "St. Louis",
+   "name_ko": "세인트루이스"
+  },
+  "PDX": {
+   "name": "Portland (OR)",
+   "name_ko": "포틀랜드(오리건)"
+  },
+  "HNL": {
+   "name": "Honolulu",
+   "name_ko": "호놀룰루"
+  },
+  "SMF": {
+   "name": "Sacramento",
+   "name_ko": "새크라멘토"
+  },
+  "IAD": {
+   "name": "Washington Dulles",
+   "name_ko": "워싱턴 덜레스"
+  },
+  "RDU": {
+   "name": "Raleigh/Durham",
+   "name_ko": "롤리/더럼"
+  },
+  "HOU": {
+   "name": "Houston Hobby",
+   "name_ko": "휴스턴 호비"
+  },
+  "MSY": {
+   "name": "New Orleans",
+   "name_ko": "뉴올리언스"
+  },
+  "MCI": {
+   "name": "Kansas City",
+   "name_ko": "캔자스시티"
+  },
+  "IND": {
+   "name": "Indianapolis",
+   "name_ko": "인디애나폴리스"
+  },
+  "SJC": {
+   "name": "San Jose",
+   "name_ko": "산호세"
+  },
+  "SNA": {
+   "name": "Santa Ana (Orange County)",
+   "name_ko": "샌타애나(오렌지카운티)"
+  },
+  "CMH": {
+   "name": "Columbus",
+   "name_ko": "콜럼버스"
+  },
+  "PIT": {
+   "name": "Pittsburgh",
+   "name_ko": "피츠버그"
+  },
+  "SAT": {
+   "name": "San Antonio",
+   "name_ko": "샌안토니오"
+  },
+  "CLE": {
+   "name": "Cleveland",
+   "name_ko": "클리블랜드"
+  },
+  "SJU": {
+   "name": "San Juan",
+   "name_ko": "산후안"
+  },
+  "RSW": {
+   "name": "Fort Myers",
+   "name_ko": "포트마이어스"
+  },
+  "OAK": {
+   "name": "Oakland",
+   "name_ko": "오클랜드"
+  },
+  "CVG": {
+   "name": "Cincinnati",
+   "name_ko": "신시내티"
+  },
+  "PBI": {
+   "name": "West Palm Beach",
+   "name_ko": "웨스트팜비치"
+  },
+  "BUR": {
+   "name": "Burbank",
+   "name_ko": "버뱅크"
+  },
+  "JAX": {
+   "name": "Jacksonville",
+   "name_ko": "잭슨빌"
+  },
+  "MKE": {
+   "name": "Milwaukee",
+   "name_ko": "밀워키"
+  },
+  "ONT": {
+   "name": "Ontario (CA)",
+   "name_ko": "온타리오(캘리포니아)"
+  },
+  "OGG": {
+   "name": "Kahului (Maui)",
+   "name_ko": "카훌루이(마우이)"
+  },
+  "ABQ": {
+   "name": "Albuquerque",
+   "name_ko": "앨버커키"
+  },
+  "OMA": {
+   "name": "Omaha",
+   "name_ko": "오마하"
+  },
+  "CHS": {
+   "name": "Charleston (SC)",
+   "name_ko": "찰스턴"
+  },
+  "OKC": {
+   "name": "Oklahoma City",
+   "name_ko": "오클라호마시티"
+  },
+  "MEM": {
+   "name": "Memphis",
+   "name_ko": "멤피스"
+  },
+  "BOI": {
+   "name": "Boise",
+   "name_ko": "보이시"
+  },
+  "BDL": {
+   "name": "Hartford",
+   "name_ko": "하트퍼드"
+  },
+  "SDF": {
+   "name": "Louisville",
+   "name_ko": "루이빌"
+  },
+  "RNO": {
+   "name": "Reno/Tahoe",
+   "name_ko": "리노/타호"
+  },
+  "BUF": {
+   "name": "Buffalo",
+   "name_ko": "버펄로"
+  },
+  "TUS": {
+   "name": "Tucson",
+   "name_ko": "투손"
+  },
+  "ORF": {
+   "name": "Norfolk",
+   "name_ko": "노퍽"
+  },
+  "SAV": {
+   "name": "Savannah",
+   "name_ko": "서배너"
+  },
+  "ANC": {
+   "name": "Anchorage",
+   "name_ko": "앵커리지"
+  },
+  "GRR": {
+   "name": "Grand Rapids",
+   "name_ko": "그랜드래피즈"
+  },
+  "TUL": {
+   "name": "Tulsa",
+   "name_ko": "털사"
+  },
+  "GEG": {
+   "name": "Spokane",
+   "name_ko": "스포캔"
+  },
+  "RIC": {
+   "name": "Richmond",
+   "name_ko": "리치먼드"
+  },
+  "SRQ": {
+   "name": "Sarasota/Bradenton",
+   "name_ko": "새러소타/브레이든턴"
+  },
+  "ELP": {
+   "name": "El Paso",
+   "name_ko": "엘패소"
+  },
+  "BHM": {
+   "name": "Birmingham",
+   "name_ko": "버밍햄"
+  },
+  "LGB": {
+   "name": "Long Beach",
+   "name_ko": "롱비치"
+  },
+  "KOA": {
+   "name": "Kona",
+   "name_ko": "코나"
+  },
+  "LIH": {
+   "name": "Lihue (Kauai)",
+   "name_ko": "리후에(카우아이)"
+  },
+  "PVD": {
+   "name": "Providence",
+   "name_ko": "프로비던스"
+  },
+  "PSP": {
+   "name": "Palm Springs",
+   "name_ko": "팜스프링스"
+  },
+  "DSM": {
+   "name": "Des Moines",
+   "name_ko": "디모인"
+  },
+  "MYR": {
+   "name": "Myrtle Beach",
+   "name_ko": "머틀비치"
+  },
+  "GSP": {
+   "name": "Greenville/Spartanburg",
+   "name_ko": "그린빌/스파턴버그"
+  },
+  "PNS": {
+   "name": "Pensacola",
+   "name_ko": "펜서콜라"
+  },
+  "COS": {
+   "name": "Colorado Springs",
+   "name_ko": "콜로라도스프링스"
+  },
+  "FAT": {
+   "name": "Fresno",
+   "name_ko": "프레즈노"
+  },
+  "TYS": {
+   "name": "Knoxville",
+   "name_ko": "녹스빌"
+  },
+  "LIT": {
+   "name": "Little Rock",
+   "name_ko": "리틀록"
+  },
+  "XNA": {
+   "name": "Northwest Arkansas",
+   "name_ko": "노스웨스트아칸소"
+  },
+  "MSN": {
+   "name": "Madison",
+   "name_ko": "매디슨"
+  },
+  "ALB": {
+   "name": "Albany",
+   "name_ko": "올버니"
+  },
+  "ICT": {
+   "name": "Wichita",
+   "name_ko": "위치토"
+  },
+  "BZN": {
+   "name": "Bozeman",
+   "name_ko": "보즈먼"
+  },
+  "HPN": {
+   "name": "White Plains",
+   "name_ko": "화이트플레인스"
+  },
+  "PWM": {
+   "name": "Portland (ME)",
+   "name_ko": "포틀랜드(메인)"
+  },
+  "VPS": {
+   "name": "Destin/Fort Walton Beach",
+   "name_ko": "데스틴/포트월턴비치"
+  },
+  "SFB": {
+   "name": "Orlando Sanford",
+   "name_ko": "올랜도 샌퍼드"
+  },
+  "SYR": {
+   "name": "Syracuse",
+   "name_ko": "시러큐스"
+  },
+  "SGF": {
+   "name": "Springfield (MO)"
+  },
+  "SPI": {
+   "name": "Springfield (IL)"
+  },
+  "AZA": {
+   "name": "Phoenix-Mesa Gateway"
+  },
+  "TVC": {
+   "name": "Traverse City"
+  },
+  "GRB": {
+   "name": "Green Bay"
+  },
+  "BFL": {
+   "name": "Bakersfield"
+  },
+  "INL": {
+   "name": "International Falls"
+  },
+  "PSM": {
+   "name": "Portsmouth (NH)"
+  },
+  "CIU": {
+   "name": "Sault Ste. Marie"
+  },
+  "MQT": {
+   "name": "Marquette"
+  },
+  "BLV": {
+   "name": "Belleville/Scott (IL)"
+  },
+  "GUM": {
+   "name": "Guam"
+  },
+  "CWA": {
+   "name": "Wausau"
+  },
+  "LCK": {
+   "name": "Columbus Rickenbacker"
+  },
+  "GRK": {
+   "name": "Killeen/Fort Hood"
+  },
+  "GTR": {
+   "name": "Columbus (MS) Golden Triangle"
+  },
+  "PIB": {
+   "name": "Hattiesburg/Laurel"
+  },
+  "YUM": {
+   "name": "Yuma"
+  },
+  "OAJ": {
+   "name": "Jacksonville (NC)"
+  },
+  "ABY": {
+   "name": "Albany (GA)"
+  },
+  "LAF": {
+   "name": "Lafayette (IN)"
+  },
+  "LFT": {
+   "name": "Lafayette (LA)"
+  },
+  "FAY": {
+   "name": "Fayetteville (NC)"
+  },
+  "COU": {
+   "name": "Columbia (MO)"
+  },
+  "CAE": {
+   "name": "Columbia (SC)"
+  },
+  "ILM": {
+   "name": "Wilmington (NC)"
+  },
+  "CRW": {
+   "name": "Charleston (WV)"
+  },
+  "RST": {
+   "name": "Rochester (MN)"
+  },
+  "ROC": {
+   "name": "Rochester (NY)"
+  },
+  "MHT": {
+   "name": "Manchester (NH)"
+  },
+  "JAN": {
+   "name": "Jackson (MS)"
+  },
+  "BTV": {
+   "name": "Burlington (VT)"
+  },
+  "MHK": {
+   "name": "Manhattan (KS)"
+  },
+  "OTH": {
+   "name": "North Bend (OR)"
+  },
+  "ATY": {
+   "name": "Watertown (SD)"
+  },
+  "MLU": {
+   "name": "Monroe (LA)"
+  },
+  "RDM": {
+   "name": "Redmond/Bend (OR)"
+  },
+  "USA": {
+   "name": "Concord (NC)"
+  },
+  "MSO": {
+   "name": "Missoula"
+  },
+  "BIL": {
+   "name": "Billings"
+  },
+  "AMA": {
+   "name": "Amarillo"
+  },
+  "FLG": {
+   "name": "Flagstaff"
+  },
+  "CMI": {
+   "name": "Champaign"
+  },
+  "BMI": {
+   "name": "Bloomington (IL)"
+  },
+  "AEX": {
+   "name": "Alexandria (LA)"
+  },
+  "TXK": {
+   "name": "Texarkana"
+  },
+  "ALO": {
+   "name": "Waterloo (IA)"
+  },
+  "SHR": {
+   "name": "Sheridan (WY)"
+  },
+  "GGG": {
+   "name": "Longview (TX)"
+  },
+  "SPS": {
+   "name": "Wichita Falls"
+  },
+  "TYR": {
+   "name": "Tyler (TX)"
+  },
+  "MGW": {
+   "name": "Morgantown (WV)"
+  },
+  "LAR": {
+   "name": "Laramie"
+  },
+  "CDV": {
+   "name": "Cordova (AK)"
+  },
+  "ADK": {
+   "name": "Adak (AK)"
+  },
+  "SMX": {
+   "name": "Santa Maria (CA)"
+  },
+  "ROW": {
+   "name": "Roswell (NM)"
+  },
+  "PRC": {
+   "name": "Prescott (AZ)"
+  },
+  "HYA": {
+   "name": "Hyannis"
+  },
+  "MVY": {
+   "name": "Martha's Vineyard"
+  },
+  "ACK": {
+   "name": "Nantucket"
+  },
+  "LBE": {
+   "name": "Latrobe (PA)"
+  },
+  "HTS": {
+   "name": "Huntington (WV)"
+  },
+  "SCK": {
+   "name": "Stockton"
+  },
+  "EWN": {
+   "name": "New Bern (NC)"
+  },
+  "BGM": {
+   "name": "Binghamton"
+  },
+  "CKB": {
+   "name": "Clarksburg (WV)"
+  },
+  "MEI": {
+   "name": "Meridian (MS)"
+  },
+  "TWF": {
+   "name": "Twin Falls"
+  },
+  "BTM": {
+   "name": "Butte"
+  },
+  "CPR": {
+   "name": "Casper"
+  },
+  "CYS": {
+   "name": "Cheyenne"
+  },
+  "HOB": {
+   "name": "Hobbs (NM)"
+  },
+  "DRO": {
+   "name": "Durango"
+  },
+  "EGE": {
+   "name": "Vail/Eagle"
+  },
+  "SAF": {
+   "name": "Santa Fe"
+  },
+  "MTJ": {
+   "name": "Montrose (CO)"
+  },
+  "GUC": {
+   "name": "Gunnison"
+  },
+  "HDN": {
+   "name": "Steamboat Springs/Hayden"
+  },
+  "ASE": {
+   "name": "Aspen"
+  },
+  "SUN": {
+   "name": "Sun Valley/Hailey"
+  },
+  "OTZ": {
+   "name": "Kotzebue"
+  },
+  "BRW": {
+   "name": "Utqiagvik (Barrow)"
+  },
+  "SIT": {
+   "name": "Sitka"
+  },
+  "MFR": {
+   "name": "Medford (OR)"
+  },
+  "ITO": {
+   "name": "Hilo"
+  },
+  "EUG": {
+   "name": "Eugene"
+  },
+  "ROA": {
+   "name": "Roanoke"
+  },
+  "CHA": {
+   "name": "Chattanooga"
+  },
+  "MFE": {
+   "name": "McAllen"
+  },
+  "MDT": {
+   "name": "Harrisburg"
+  },
+  "BTR": {
+   "name": "Baton Rouge"
+  },
+  "TTN": {
+   "name": "Trenton"
+  },
+  "ISP": {
+   "name": "Long Island/Islip"
+  },
+  "AGS": {
+   "name": "Augusta (GA)"
+  },
+  "MGM": {
+   "name": "Montgomery"
+  },
+  "MOB": {
+   "name": "Mobile"
+  },
+  "ACV": {
+   "name": "Arcata/Eureka"
+  },
+  "LEX": {
+   "name": "Lexington (KY)"
+  },
+  "GSO": {
+   "name": "Greensboro"
+  },
+  "ATW": {
+   "name": "Appleton"
+  },
+  "IDA": {
+   "name": "Idaho Falls"
+  },
+  "SJT": {
+   "name": "San Angelo"
+  },
+  "TRI": {
+   "name": "Tri-Cities (TN)"
+  },
+  "ELM": {
+   "name": "Elmira/Corning"
+  },
+  "PSC": {
+   "name": "Pasco/Tri-Cities (WA)"
+  }
+ }
+}

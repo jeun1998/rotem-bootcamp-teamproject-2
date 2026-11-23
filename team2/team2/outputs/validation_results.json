@@ -1,0 +1,86 @@
+[
+  {
+    "rows": 707279,
+    "macro_f1": 0.34962832450576403,
+    "delay_pr_auc_ap": 0.3665664101730378,
+    "cancel_pr_auc_ap": 0.08075138494454051,
+    "log_loss": 0.5262729297570398,
+    "brier": 0.31656417996479097,
+    "confusion_matrix": [
+      [
+        543247,
+        10367,
+        36
+      ],
+      [
+        131365,
+        12585,
+        60
+      ],
+      [
+        8324,
+        1194,
+        101
+      ]
+    ],
+    "model": "xgboost",
+    "temperature": 1.0079457459757508,
+    "feature_set": "base_plus_candidates"
+  },
+  {
+    "rows": 707279,
+    "macro_f1": 0.32005113947129166,
+    "delay_pr_auc_ap": 0.3619412674464889,
+    "cancel_pr_auc_ap": 0.07462213402685651,
+    "log_loss": 0.5283697048886494,
+    "brier": 0.31761464658936683,
+    "confusion_matrix": [
+      [
+        549880,
+        3753,
+        17
+      ],
+      [
+        138328,
+        5657,
+        25
+      ],
+      [
+        8745,
+        838,
+        36
+      ]
+    ],
+    "model": "random_forest",
+    "temperature": 0.9303139767398548,
+    "feature_set": "base_plus_candidates"
+  },
+  {
+    "rows": 707279,
+    "macro_f1": 0.3334472189377849,
+    "delay_pr_auc_ap": 0.34528711137496243,
+    "cancel_pr_auc_ap": 0.05243380469836301,
+    "log_loss": 0.5380968379112145,
+    "brier": 0.3223524738924664,
+    "confusion_matrix": [
+      [
+        545784,
+        7807,
+        59
+      ],
+      [
+        135225,
+        8681,
+        104
+      ],
+      [
+        8709,
+        837,
+        73
+      ]
+    ],
+    "model": "logistic",
+    "temperature": 0.9958685649819848,
+    "feature_set": "base_plus_candidates"
+  }
+]

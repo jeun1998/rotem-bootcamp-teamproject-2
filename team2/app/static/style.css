@@ -1,0 +1,429 @@
+/* ───────── Tokens ───────── */
+:root {
+  color-scheme: light;
+  --sky-1: #3b3f7a;
+  --sky-2: #8a6bb8;
+  --sky-3: #e59ab4;
+  --sky-4: #f6c39a;
+  --ink-on-sky: #ffffff;
+  --ink-on-sky-2: rgba(255, 255, 255, 0.86);
+
+  --glass: rgba(255, 255, 255, 0.78);
+  --glass-strong: rgba(255, 255, 255, 0.94);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --field: #ffffff;
+  --field-border: #e4e2ee;
+  --surface-1: #ffffff;
+  --card: color-mix(in srgb, var(--surface-1) 90%, transparent);  /* 결과 안 카드: 뒤 배경이 아주 살짝 비친다 */
+  --grid: #e9e8ef;
+
+  --text-primary: #1b1a2e;
+  --text-secondary: #55546a;
+  --text-muted: #7c7b8f;
+
+  --accent: #4f46e5;
+  --accent-2: #6d5ff0;
+  --accent-ink: #ffffff;
+  --focus: #6d5ff0;
+
+  /* 데이터 색: 지연=categorical slot 1(blue), 결항=slot 2(orange) */
+  --series-delay: #2a78d6;
+  --series-cancel: #eb6834;
+  --tint-delay: rgba(42, 120, 214, 0.08);
+  --tint-cancel: rgba(235, 104, 52, 0.08);
+  --track: #ecebf2;
+
+  /* 위험도 = status 팔레트 (아이콘+라벨과 함께만 사용) */
+  --good: #0f7b3f;  --good-bg: #e3f4ea;
+  --warn: #8a5a00;  --warn-bg: #fdf0d2;
+  --crit: #b42318;  --crit-bg: #fde4e1;
+
+  --shadow: 0 20px 50px -20px rgba(40, 20, 80, 0.45);
+  --radius: 20px;
+
+  /* 첫 화면 높이 배분: 날짜·시간 칸 아래에 선택창(드롭다운, 브라우저 날짜 선택창 약 320px)이 아래로 펼쳐질 자리를 남기고
+     나머지를 히어로에 준다. 히어로가 줄어든 만큼 영상을 위로 올려 같은 장면(날개)이 제목 근처에 보이게 한다 */
+  --topbar-pad: 18px;  /* 상단바 높이 = 위아래 여백 + 테마 버튼(40px). 첫 화면 높이 계산에 쓴다 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --sky-1: #070a1c; --sky-2: #141a3d; --sky-3: #2c2558; --sky-4: #4a2f5c;
+    --glass: rgba(24, 24, 40, 0.74); --glass-strong: rgba(30, 30, 48, 0.94); --glass-border: rgba(255, 255, 255, 0.1);
+    --field: #232338; --field-border: #36364f; --surface-1: #1d1d30; --grid: #2f2f45;
+    --text-primary: #f1f0f7; --text-secondary: #c4c3d4; --text-muted: #9a99ae;
+    --accent: #7c72ff; --accent-2: #9187ff; --focus: #a49cff;
+    --series-delay: #3987e5; --series-cancel: #d95926;
+    --tint-delay: rgba(57, 135, 229, 0.12); --tint-cancel: rgba(217, 89, 38, 0.12); --track: #2f2f45;
+    --good: #6fd69a; --good-bg: rgba(111, 214, 154, 0.14);
+    --warn: #f1c25b; --warn-bg: rgba(241, 194, 91, 0.14);
+    --crit: #ff8a7a; --crit-bg: rgba(255, 138, 122, 0.14);
+    --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --sky-1: #070a1c; --sky-2: #141a3d; --sky-3: #2c2558; --sky-4: #4a2f5c;
+  --glass: rgba(24, 24, 40, 0.74); --glass-strong: rgba(30, 30, 48, 0.94); --glass-border: rgba(255, 255, 255, 0.1);
+  --field: #232338; --field-border: #36364f; --surface-1: #1d1d30; --grid: #2f2f45;
+  --text-primary: #f1f0f7; --text-secondary: #c4c3d4; --text-muted: #9a99ae;
+  --accent: #7c72ff; --accent-2: #9187ff; --focus: #a49cff;
+  --series-delay: #3987e5; --series-cancel: #d95926;
+  --tint-delay: rgba(57, 135, 229, 0.12); --tint-cancel: rgba(217, 89, 38, 0.12); --track: #2f2f45;
+  --good: #6fd69a; --good-bg: rgba(111, 214, 154, 0.14);
+  --warn: #f1c25b; --warn-bg: rgba(241, 194, 91, 0.14);
+  --crit: #ff8a7a; --crit-bg: rgba(255, 138, 122, 0.14);
+  --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* ───────── Base ───────── */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { min-height: 100%; scrollbar-gutter: stable; background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 30%, var(--sky-3) 60%, var(--sky-4) 100%); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Pretendard Variable", Pretendard, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* 하늘: 화면 전체에 고정된 비행 영상. 첫 화면은 제목 쪽(왼쪽)만 어둡게 하고,
+   스크롤하면 --scrolled(0~1, app.js)만큼 하늘색 덮개(.sky-veil)가 짙어져 결과 카드가 잘 읽힌다.
+   다크 모드는 영상을 어둡게 하고 별을 띄운다 */
+.sky { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.sky-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+}
+.sky::before, .sky::after, .sky-veil { content: ""; position: absolute; inset: 0; z-index: 1; }
+.sky::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--sky-1) 50%, transparent), transparent 55%),
+    linear-gradient(180deg, color-mix(in srgb, var(--sky-1) 18%, transparent), transparent 30%);
+}
+.sky-veil {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sky-2) 55%, transparent), color-mix(in srgb, var(--sky-3) 70%, transparent));
+  opacity: calc(var(--scrolled, 0) * .75);
+}
+.sky::after { background: radial-gradient(1px 1px at 12% 20%, #fff, transparent), radial-gradient(1px 1px at 28% 8%, #fff, transparent), radial-gradient(1.5px 1.5px at 50% 15%, #fff, transparent), radial-gradient(1px 1px at 63% 30%, #fff, transparent), radial-gradient(1px 1px at 81% 12%, #fff, transparent), radial-gradient(1px 1px at 20% 45%, #fff, transparent), radial-gradient(1.5px 1.5px at 42% 38%, #fff, transparent), radial-gradient(1.5px 1.5px at 36% 22%, #fff, transparent), radial-gradient(1px 1px at 59% 6%, #fff, transparent), radial-gradient(1.5px 1.5px at 92% 26%, #fff, transparent); opacity: 0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sky-video { filter: brightness(.6) saturate(.85); }
+  :root:not([data-theme="light"]) .sky::after { animation: twinkle 4s ease-in-out infinite alternate; }
+}
+:root[data-theme="dark"] .sky-video { filter: brightness(.6) saturate(.85); }
+:root[data-theme="dark"] .sky::after { animation: twinkle 4s ease-in-out infinite alternate; }
+@keyframes twinkle { from { opacity: .3; } to { opacity: .8; } }
+@media (prefers-reduced-motion: reduce) {
+  .sky::after { animation: none !important; opacity: .6; }
+}
+
+/* ───────── Top bar ───────── */
+.topbar {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1280px; margin: 0 auto; padding: var(--topbar-pad) 24px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink-on-sky); text-decoration: none; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; }
+.brand svg { width: 28px; height: 28px; fill: currentColor; stroke: none; transform: rotate(45deg); }
+.icon-btn {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 50%; border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.12); color: var(--ink-on-sky); cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.icon-btn svg { width: 20px; height: 20px; }
+.icon-btn .i-sun { display: none; }
+:root[data-theme="dark"] .icon-btn .i-sun { display: block; }
+:root[data-theme="dark"] .icon-btn .i-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-btn .i-sun { display: block; }
+  :root:not([data-theme="light"]) .icon-btn .i-moon { display: none; }
+}
+
+/* ───────── Layout ───────── */
+main { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* 첫 화면: 제목·폼·최근 조회를 화면 아래쪽에 붙이고, 위쪽은 영상에 내준다.
+   상단바와 합쳐 정확히 화면 높이라서 처음에는 스크롤이 없고, 결과는 그 아래에 이어진다 */
+.first-screen {
+  min-height: calc(100svh - 2 * var(--topbar-pad) - 40px); box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+/* 폼 아래에 가장 큰 선택창(달력 291px)이 화면 안에 펼쳐질 자리를 늘 비워 두어, 선택창을 열어도 화면이 움직이지 않는다.
+   날짜 칸 아래에 필요한 공간 = 12px(달력 간격) + 291px + 12px(화면 끝 여백) = 315px, 폼 안에 이미 있는 23px 를 뺀다.
+   최근 조회는 이 자리 안에 두고, 선택창이 열리면 그 위를 덮는다 */
+.under-form { min-height: 292px; }
+@media (max-width: 1080px) { .under-form { min-height: 222px; } }  /* 날짜 줄 아래에 예측하기 버튼 줄(70px)이 있다 */
+/* 자리를 비워 두면 첫 화면이 넘치는 낮은 화면에서는 비우지 않고, 선택창을 열 때 room(app.js)이 화면을 올린다 */
+@media (max-height: 620px), (max-width: 1080px) and (max-height: 760px), (max-width: 640px) {
+  .under-form { min-height: 0; padding-bottom: 32px; }
+}
+.hero { margin: 0 0 24px; color: var(--ink-on-sky); }
+.hero-script { font-family: "Gaegu", cursive; font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin: 0; color: var(--ink-on-sky-2); }
+.hero h1 { font-size: clamp(2.2rem, 5.6vw, 4rem); max-width: 14ch; line-height: 1.12; font-weight: 800; letter-spacing: -0.03em; margin: 6px 0 12px; text-shadow: 0 2px 24px rgba(40, 10, 60, .35); }
+.hero-sub { margin: 0; max-width: 34ch; color: var(--ink-on-sky-2); font-size: clamp(.95rem, 1.6vw, 1.1rem); }
+/* 넓은 화면에서는 제목을 한 줄로 써서 폼을 위로 올린다 */
+@media (min-width: 900px) {
+  .hero h1 { max-width: none; font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
+}
+/* 낮은 화면에서는 손글씨 문구와 부제를 접고 여백을 줄여, 첫 화면에 폼이 들어가게 한다 */
+@media (min-width: 641px) and (max-height: 820px) {
+  .hero-script, .hero-sub { display: none; }
+}
+@media (min-width: 641px) and (max-height: 700px) {
+  :root { --topbar-pad: 10px; }
+  .hero { margin-bottom: 16px; }
+  .hero h1 { font-size: 2.4rem; margin: 0 0 4px; }
+}
+
+.glass {
+  background: color-mix(in srgb, var(--glass) 76%, transparent);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+}
+
+/* ───────── Search form ───────── */
+.search {
+  /* backdrop-filter가 폼을 별도 쌓임 맥락으로 만들어 목록의 z-index가 폼 밖에 닿지 않으므로, 폼 자체를 칩·결과보다 위에 둔다 */
+  position: relative; z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 14px; align-items: start;
+  padding: 22px 24px;
+}
+.route { grid-column: 2 / -1; }
+.field { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; min-width: 0; }
+.field > label { font-size: .88rem; font-weight: 700; color: var(--text-secondary); padding-left: 2px; }
+.control {
+  position: relative; display: flex; align-items: center; gap: 8px;
+  height: 48px; padding: 0 12px;
+  background: var(--field); border: 1px solid var(--field-border); border-radius: 12px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.control:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 22%, transparent); }
+.control .lead { width: 18px; height: 18px; color: var(--text-muted); flex: none; }
+.f-airline .lead { fill: currentColor; stroke: none; transform: rotate(45deg); }
+.control input {
+  flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; outline: none;
+  font-weight: 600; font-size: .98rem; text-overflow: ellipsis;
+}
+.f-date input { cursor: pointer; }
+.control .chev { width: 16px; height: 16px; color: var(--text-muted); flex: none; transition: transform .15s; cursor: pointer; }
+.combo[data-open] .chev, .control:has([aria-expanded="true"]) .chev, .f-date .control:focus-within .chev { transform: rotate(180deg); }
+
+.route { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr); gap: 6px; align-items: start; }
+.swap { position: relative; z-index: 1;
+  margin-top: 33px; width: 36px; height: 36px; display: grid; place-items: center;
+  border-radius: 50%; border: 1px solid var(--field-border); background: var(--field);
+  color: var(--text-secondary); cursor: pointer; transition: transform .25s;
+}
+.swap:hover { transform: rotate(180deg); color: var(--accent); }
+.swap svg { width: 18px; height: 18px; }
+
+.primary {
+  align-self: start; height: 48px; margin-bottom: 0;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 0 26px; border: 0; border-radius: 999px; cursor: pointer;
+  font-weight: 700; font-size: 1.02rem; color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 24px -10px var(--accent);
+  transition: transform .15s, box-shadow .15s;
+  white-space: nowrap;
+  margin-top: 27px; /* 필드 라벨 아래 입력 칸과 같은 높이에 맞춘다 */
+}
+.primary svg { width: 18px; height: 18px; fill: currentColor; stroke: none; }
+.primary:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px var(--accent); }
+.primary:disabled { opacity: .65; cursor: progress; transform: none; }
+
+.error { color: var(--crit); font-size: .8rem; padding-left: 2px; }
+.error:empty { display: none; }
+.form-error { grid-column: 1 / -1; }
+
+/* Combobox */
+.combo-input { cursor: text; }
+.combo-list {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 20;
+  max-height: calc(5 * 36px + 14px); overflow-y: auto;  /* 다섯 줄 */ margin: 0; padding: 6px; list-style: none;
+  background: var(--glass-strong); border: 1px solid var(--field-border); border-radius: 12px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  min-width: 240px;
+}
+.combo-list li {
+  display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 4px 10px;
+  padding: 8px 10px; border-radius: 8px; cursor: pointer;
+}
+.combo-list li .code { font-weight: 800; font-variant-numeric: tabular-nums; }
+.combo-list li .nm { font-size: .9rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.combo-list li .nm small { color: var(--text-muted); margin-left: 4px; }
+.combo-list li[aria-selected="true"], .combo-list li:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.combo-list li.current .code::after { content: " ✓"; color: var(--accent); }
+.combo-list .empty { display: block; color: var(--text-muted); cursor: default; }
+.combo-list .empty:hover { background: none; }
+
+/* Chips */
+/* 한 줄로 두고 넘치면 옆으로 넘겨 본다. 줄이 늘어 첫 화면이 길어지지 않게 */
+.chips { display: flex; align-items: center; gap: 12px; margin-top: 16px; min-width: 0; color: var(--ink-on-sky); }
+.chips-label { flex: none; font-weight: 700; font-size: .92rem; text-shadow: 0 1px 8px rgba(40, 10, 60, .4); }
+.chip-list { display: flex; gap: 8px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.chip-list::-webkit-scrollbar { display: none; }
+.chip {
+  border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.22); color: var(--ink-on-sky);
+  padding: 7px 14px; border-radius: 999px; cursor: pointer; font-size: .88rem; font-weight: 600;
+  backdrop-filter: blur(10px); transition: background .15s; flex: none; white-space: nowrap;
+}
+.chip:hover { background: rgba(255,255,255,.36); }
+.chip small { opacity: .8; font-weight: 500; margin-left: 4px; }
+
+/* ───────── Result ───────── */
+.result { margin: 28px 0 64px; padding: 26px; display: grid; gap: 22px; animation: rise .35s ease-out; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .result { animation: none; } .swap { transition: none; } }
+
+.result-head { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.route-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 22px; border-radius: 16px; color: #fff;
+  background: linear-gradient(135deg, #3b3f7a, #8a6bb8 60%, #e59ab4);
+}
+.route-card .ap { display: grid; text-align: center; }
+.route-card .ap strong { font-size: 1.9rem; font-weight: 800; letter-spacing: .02em; }
+.route-card .ap span { font-size: .78rem; opacity: .9; }
+.route-card .arc { width: 120px; height: 40px; }
+.route-card .arc path:first-child { stroke: rgba(255,255,255,.75); stroke-dasharray: 3 4; stroke-width: 1.5; }
+.route-card .arc-plane { fill: #fff; stroke: none; }
+.meta p { margin: 0; }
+.airline-line { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
+.when { margin-top: 6px !important; display: flex; align-items: center; gap: 6px; color: var(--text-secondary); flex-wrap: wrap; }
+.when svg { width: 16px; height: 16px; color: var(--text-muted); }
+.when .sep { color: var(--grid); margin: 0 4px; }
+.when .w { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+@media (max-width: 640px) { .when .sep { display: none; } .when { column-gap: 14px; } }
+
+.metrics { display: grid; grid-template-columns: 1fr 1fr minmax(180px, .8fr); gap: 16px; align-items: stretch; }
+.metric { border-radius: 16px; padding: 18px 20px; background: var(--card); border: 1px solid var(--field-border); display: grid; gap: 10px; align-content: start; }
+.metric[data-kind="delay"] { background: linear-gradient(var(--tint-delay), var(--tint-delay)), var(--card); }
+.metric[data-kind="cancel"] { background: linear-gradient(var(--tint-cancel), var(--tint-cancel)), var(--card); }
+.metric header { display: flex; align-items: center; gap: 8px; }
+.metric header svg { width: 22px; height: 22px; }
+.metric[data-kind="delay"] header svg { color: var(--series-delay); }
+.metric[data-kind="cancel"] header svg { color: var(--series-cancel); }
+.metric[data-kind="cancel"] header svg path:first-child { fill: currentColor; stroke: none; transform: rotate(45deg); transform-origin: center; }
+.metric h2 { margin: 0; font-size: 1rem; font-weight: 700; }
+.metric h2 small { font-weight: 500; color: var(--text-muted); font-size: .8rem; margin-left: 4px; }
+.big { margin: 0; line-height: 1; }
+.big .num { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.big .pct { font-size: 1.4rem; font-weight: 700; color: var(--text-secondary); margin-left: 2px; }
+.meter { height: 8px; border-radius: 999px; background: var(--track); overflow: hidden; }
+.meter span { display: block; height: 100%; border-radius: 999px; width: 0; transition: width .6s cubic-bezier(.2,.8,.2,1); }
+.metric[data-kind="delay"] .meter span { background: var(--series-delay); }
+.metric[data-kind="cancel"] .meter span { background: var(--series-cancel); }
+.risk { justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 700; padding: 4px 10px 4px 8px; border-radius: 999px; }
+.risk svg { width: 14px; height: 14px; }
+.risk.low { color: var(--good); background: var(--good-bg); }
+.risk.medium { color: var(--warn); background: var(--warn-bg); }
+.risk.high { color: var(--crit); background: var(--crit-bg); }
+.note { margin: 0; display: flex; gap: 8px; align-self: center; color: var(--text-secondary); font-size: .86rem; line-height: 1.6; }
+.note svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--text-muted); }
+
+/* Hourly */
+.hourly { border-top: 1px solid var(--grid); padding-top: 20px; display: grid; gap: 14px; }
+.hourly-head h2 { margin: 0; font-size: 1.15rem; }
+.hourly-head p { margin: 4px 0 0; color: var(--text-secondary); font-size: .9rem; }
+.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.chart { margin: 0; padding: 14px 16px 8px; border-radius: 14px; background: var(--card); border: 1px solid var(--field-border); }
+.chart figcaption { font-weight: 700; font-size: .92rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.chart-body svg { width: 100%; height: auto; display: block; overflow: visible; stroke: none; }
+.chart-body .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart-body .tick { fill: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart-body .lbl { fill: var(--text-primary); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.chart-body .lbl.sub { fill: var(--text-secondary); font-weight: 600; }
+.chart-body .badge { fill: var(--surface-1); stroke: var(--field-border); stroke-width: 1; pointer-events: none; }
+.chart-body .bar { transition: opacity .15s; pointer-events: none; }
+.chart[data-kind="delay"] .bar { fill: var(--series-delay); }
+.chart[data-kind="cancel"] .bar { fill: var(--series-cancel); }
+.chart-body .bar.dim { opacity: .38; }
+.chart-body .hit { fill: transparent; cursor: pointer; }
+.chart-body .hit:hover + .bar, .chart-body .hit:focus + .bar { opacity: 1; }
+.chart-body .hit:focus { outline: none; }
+.chart-body .hit:focus-visible { stroke: var(--focus); stroke-width: 2; }
+
+.table-view summary { cursor: pointer; color: var(--text-secondary); font-size: .88rem; font-weight: 600; }
+.table-view table { margin-top: 10px; border-collapse: collapse; width: 100%; max-width: 420px; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.table-view th, .table-view td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--grid); }
+.table-view th:first-child, .table-view td:first-child { text-align: left; }
+.table-view tr.current td { font-weight: 800; }
+
+
+.tooltip {
+  position: fixed; z-index: 50; pointer-events: none;
+  padding: 8px 10px; border-radius: 10px; font-size: .82rem; line-height: 1.5;
+  background: var(--glass-strong); color: var(--text-primary); border: 1px solid var(--field-border);
+  box-shadow: var(--shadow); backdrop-filter: blur(12px); white-space: nowrap;
+}
+.tooltip b { font-variant-numeric: tabular-nums; }
+.tooltip .sw { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: 1px; }
+
+/* ───────── Responsive ───────── */
+@media (max-width: 1080px) {
+  /* 날짜·출발 시각·도착 시각을 한 줄에 둬서 폼을 한 줄 줄인다 (선택창이 아래로 펼쳐질 자리) */
+  .search { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .route { grid-column: 1 / -1; grid-row: 2; }
+  .f-airline { grid-column: 1 / -1; }
+  .primary { grid-column: 1 / -1; margin-top: 4px; width: 100%; height: 52px; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .note { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  :root { --topbar-pad: 14px; }
+  .topbar { padding-left: 16px; padding-right: 16px; }
+  main { padding: 0 16px; }
+  /* 좁은 화면에서는 날개를 제목 오른쪽 뒤로 비키고, 제목 뒤에 아래쪽 덮개를 깐다 */
+  .sky-video { object-position: 70% 30%; }
+  .sky::before { background: linear-gradient(180deg, transparent 20%, color-mix(in srgb, var(--sky-1) 62%, transparent) 62%, transparent 95%); }
+  .search { padding: 18px 16px; gap: 12px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .f-date { grid-column: 1 / -1; }
+  .route { grid-template-columns: 1fr; }
+  .swap { margin: -4px auto; transform: rotate(90deg); }
+  .swap:hover { transform: rotate(270deg); }
+  .result { padding: 18px 16px; }
+  .route-card { width: 100%; justify-content: space-between; padding: 14px 16px; }
+  .route-card .arc { width: 80px; }
+  .metrics { grid-template-columns: 1fr; }
+  .big .num { font-size: 2.6rem; }
+  .charts { grid-template-columns: 1fr; }
+}
+
+/* ───────── 시각 선택: 오전/오후 · 시 · 분 ───────── */
+.time-field input[type="text"] { cursor: pointer; font-variant-numeric: tabular-nums; }
+.time-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-width: 0; height: calc(5 * 36px + 14px); padding: 6px 0; overflow: hidden; }
+.time-cols ul { margin: 0; padding: 0 6px; list-style: none; overflow-y: auto; scrollbar-width: none; }
+.time-cols ul::-webkit-scrollbar { display: none; }
+.time-cols ul + ul { border-left: 1px solid var(--field-border); }
+.time-cols li { height: 36px; display: grid; place-items: center; border-radius: 8px; cursor: pointer; font-weight: 700; font-variant-numeric: tabular-nums; }
+.time-cols li:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.time-cols li[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
+
+/* ───────── 달력 (Air Datepicker): 드롭다운과 같은 패널 모양 ───────── */
+.air-datepicker {
+  --adp-font-family: inherit; --adp-font-size: 14px; --adp-width: 300px; --adp-z-index: 30;
+  --adp-accent-color: var(--accent); --adp-color: var(--text-primary); --adp-color-secondary: var(--text-muted);
+  --adp-background-color: var(--glass-strong); --adp-border-color: var(--field-border); --adp-border-radius: 12px;
+  --adp-day-name-color: var(--accent); --adp-btn-color: var(--accent); --adp-nav-color-secondary: var(--text-muted);
+  --adp-background-color-hover: color-mix(in srgb, var(--accent) 12%, transparent);
+  --adp-cell-background-color-selected: var(--accent); --adp-cell-background-color-selected-hover: var(--accent-2);
+  --adp-color-current-date: var(--accent); --adp-color-disabled: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  --adp-color-other-month: color-mix(in srgb, var(--text-muted) 60%, transparent);
+  box-shadow: var(--shadow); backdrop-filter: blur(18px);
+}
+.air-datepicker--pointer { display: none; }
+.air-datepicker-nav--title { font-weight: 700; }
+.adp-note { margin: 0; padding: 8px 12px 10px; border-top: 1px solid var(--field-border); color: var(--text-muted); font-size: .76rem; line-height: 1.45; }

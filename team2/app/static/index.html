@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>delay-cast · 항공편 지연·결항 예측</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="/static/vendor/air-datepicker.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    // 첫 페인트 전에 저장된 테마 적용 (깜빡임 방지)
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <video class="sky-video" id="sky-video" muted loop playsinline preload="auto" poster="/static/video/sky-loop-poster.jpg">
+      <source src="/static/video/sky-loop.mp4" type="video/mp4">
+    </video>
+    <div class="sky-veil"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+      delay-cast
+    </a>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <div class="first-screen">
+      <section class="hero">
+        <p class="hero-script">여행 전, 꼭 확인하세요</p>
+        <h1>내 항공편은 제시간에 도착할까?</h1>
+        <p class="hero-sub">미국 국내선 운항 정보를 입력하면 지연·결항 확률을 예측해드려요.</p>
+      </section>
+
+      <form id="predict-form" class="glass search" novalidate>
+        <div class="field f-airline">
+          <label for="airline-input">항공사</label>
+          <div class="combo control" data-name="airline">
+            <svg class="lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+            <input type="hidden" name="airline">
+            <input id="airline-input" class="combo-input" type="text" placeholder="항공사 검색" autocomplete="off"
+                   role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="airline-list">
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <ul class="combo-list" id="airline-list" role="listbox" hidden></ul>
+          </div>
+          <small class="error" data-for="airline"></small>
+        </div>
+
+        <div class="route">
+          <div class="field">
+            <label for="origin-input">출발지</label>
+            <div class="combo control" data-name="origin">
+              <svg class="lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <input type="hidden" name="origin">
+              <input id="origin-input" class="combo-input" type="text" placeholder="공항 검색" autocomplete="off"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="origin-list">
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              <ul class="combo-list" id="origin-list" role="listbox" hidden></ul>
+            </div>
+            <small class="error" data-for="origin"></small>
+          </div>
+          <button type="button" class="swap" id="swap" aria-label="출발지와 도착지 바꾸기">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h13m0 0-4-4m4 4-4 4M17 17H4m0 0 4-4m-4 4 4 4"/></svg>
+          </button>
+          <div class="field">
+            <label for="dest-input">도착지</label>
+            <div class="combo control" data-name="dest">
+              <svg class="lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <input type="hidden" name="dest">
+              <input id="dest-input" class="combo-input" type="text" placeholder="공항 검색" autocomplete="off"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="dest-list">
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              <ul class="combo-list" id="dest-list" role="listbox" hidden></ul>
+            </div>
+            <small class="error" data-for="dest"></small>
+          </div>
+        </div>
+
+        <div class="field f-date">
+          <label for="date">출발 예정일</label>
+          <div class="control">
+            <input type="hidden" name="date">
+            <input id="date" type="text" readonly autocomplete="off">
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <small class="error" data-for="date"></small>
+        </div>
+
+        <div class="field f-time">
+          <label for="dep_time">출발 시각</label>
+          <div class="control time-field">
+            <input type="hidden" name="dep_time">
+            <input id="dep_time" type="text" placeholder="-- --:--" autocomplete="off"
+                   role="combobox" aria-expanded="false" aria-controls="dep_time-list">
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <div class="combo-list time-cols" id="dep_time-list" hidden></div>
+          </div>
+          <small class="error" data-for="dep_time"></small>
+        </div>
+
+        <div class="field f-time">
+          <label for="arr_time">도착 시각</label>
+          <div class="control time-field">
+            <input type="hidden" name="arr_time">
+            <input id="arr_time" type="text" placeholder="-- --:--" autocomplete="off"
+                   role="combobox" aria-expanded="false" aria-controls="arr_time-list">
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <div class="combo-list time-cols" id="arr_time-list" hidden></div>
+          </div>
+          <small class="error" data-for="arr_time"></small>
+        </div>
+
+        <button type="submit" class="primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.9 2.1 2.1.9-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg>
+          예측하기
+        </button>
+        <small class="error form-error" data-for="_"></small>
+      </form>
+
+      <div class="under-form">
+        <div class="chips" id="recent-row" hidden>
+          <span class="chips-label">최근 조회</span>
+          <div class="chip-list" id="recent-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="result" class="glass result" hidden aria-live="polite">
+      <div class="result-head">
+        <div class="route-card">
+          <div class="ap"><strong id="r-origin"></strong><span id="r-origin-name"></span></div>
+          <svg class="arc" viewBox="0 0 120 40" aria-hidden="true">
+            <path d="M4 34 Q 60 -6 116 34" />
+            <path class="arc-plane" d="M60 7 l7 -2.5 l1 1 l-4.5 3.5 l2.5 4 l-1 .8 l-3.6 -3 l-3.8 2.4 l-.8 -.8 l2.8 -3.2z" />
+          </svg>
+          <div class="ap"><strong id="r-dest"></strong><span id="r-dest-name"></span></div>
+        </div>
+        <div class="meta">
+          <p class="airline-line" id="r-airline"></p>
+          <p class="when">
+            <span class="w"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span id="r-date"></span></span>
+            <span class="sep">|</span>
+            <span class="w"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="r-time"></span></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <article class="metric" data-kind="delay">
+          <header>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>
+            <h2>지연 확률 <small>출발 15분 이상</small></h2>
+          </header>
+          <p class="big"><span class="num" id="delay-prob"></span><span class="pct">%</span></p>
+          <div class="meter" role="presentation"><span id="delay-meter"></span></div>
+          <span class="risk" id="delay-risk"></span>
+        </article>
+        <article class="metric" data-kind="cancel">
+          <header>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/><path d="M3 3l18 18" class="slash"/></svg>
+            <h2>결항 확률</h2>
+          </header>
+          <p class="big"><span class="num" id="cancel-prob"></span><span class="pct">%</span></p>
+          <div class="meter" role="presentation"><span id="cancel-meter"></span></div>
+          <span class="risk" id="cancel-risk"></span>
+        </article>
+        <p class="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+          <span>예측은 미국 교통통계국(BTS) 과거 운항 데이터 기반의 확률로, 실제 운항 상황과 다를 수 있어요.</span>
+        </p>
+      </div>
+
+      <div class="hourly">
+        <div class="hourly-head">
+          <h2>같은 날, 몇 시 편이 가장 안전할까?</h2>
+          <p>같은 항공사·노선·날짜에서 출발 시각만 바꿔 예측한 결과예요. 막대를 누르면 그 시각으로 다시 예측해요.</p>
+        </div>
+        <div class="charts">
+          <figure class="chart" data-kind="delay">
+            <figcaption>시간대별 지연 확률</figcaption>
+            <div class="chart-body" id="chart-delay"></div>
+          </figure>
+          <figure class="chart" data-kind="cancel">
+            <figcaption>시간대별 결항 확률</figcaption>
+            <div class="chart-body" id="chart-cancel"></div>
+          </figure>
+        </div>
+        <details class="table-view">
+          <summary>표로 보기</summary>
+          <table>
+            <thead><tr><th scope="col">출발 시각</th><th scope="col">지연 확률</th><th scope="col">결항 확률</th></tr></thead>
+            <tbody id="hourly-table"></tbody>
+          </table>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+  <script src="/static/vendor/air-datepicker.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

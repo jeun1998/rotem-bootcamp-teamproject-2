@@ -1,0 +1,80 @@
+:root {
+  --bg: #f6f7f9;
+  --fg: #1d2330;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #dde1e7;
+  --accent: #2563eb;
+  --low: #15803d;
+  --medium: #b45309;
+  --high: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+main { max-width: 640px; margin: 0 auto; padding: 32px 16px; }
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sub { color: var(--muted); margin: 0 0 24px; }
+
+form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 480px) { .row { grid-template-columns: 1fr; } }
+
+label { display: grid; gap: 6px; font-size: 0.9rem; font-weight: 600; }
+
+select, input {
+  font: inherit;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  width: 100%;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.6; cursor: wait; }
+
+.error { color: var(--high); font-weight: 400; min-height: 0; }
+.error:empty { display: none; }
+
+#result { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.card h2 { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.prob { font-size: 2rem; font-weight: 700; margin: 6px 0 10px; font-variant-numeric: tabular-nums; }
+
+.badge { font-size: 0.8rem; font-weight: 600; padding: 3px 8px; border-radius: 999px; color: #fff; }
+.badge.low { background: var(--low); }
+.badge.medium { background: var(--medium); }
+.badge.high { background: var(--high); }
+
+.version { grid-column: 1 / -1; color: var(--muted); font-size: 0.8rem; margin: 0; }

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>항공편 지연·결항 예측</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>항공편 지연·결항 예측</h1>
+    <p class="sub">미국 국내선 운항 정보를 입력하면 지연(도착 15분 이상)과 결항 확률을 알려드립니다.</p>
+
+    <form id="predict-form" novalidate>
+      <label>항공사
+        <select name="airline" required></select>
+        <small class="error" data-for="airline"></small>
+      </label>
+      <div class="row">
+        <label>출발 공항
+          <select name="origin" required></select>
+          <small class="error" data-for="origin"></small>
+        </label>
+        <label>도착 공항
+          <select name="dest" required></select>
+          <small class="error" data-for="dest"></small>
+        </label>
+      </div>
+      <div class="row">
+        <label>출발 날짜
+          <input type="date" name="date" required>
+          <small class="error" data-for="date"></small>
+        </label>
+        <label>예정 출발 시각
+          <input type="time" name="dep_time" required>
+          <small class="error" data-for="dep_time"></small>
+        </label>
+      </div>
+      <button type="submit">예측하기</button>
+      <small class="error" data-for="_"></small>
+    </form>
+
+    <section id="result" hidden>
+      <div class="card">
+        <h2>지연 확률</h2>
+        <p class="prob" id="delay-prob"></p>
+        <span class="badge" id="delay-risk"></span>
+      </div>
+      <div class="card">
+        <h2>결항 확률</h2>
+        <p class="prob" id="cancel-prob"></p>
+        <span class="badge" id="cancel-risk"></span>
+      </div>
+      <p class="version" id="model-version"></p>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

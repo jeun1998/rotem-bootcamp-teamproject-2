@@ -1,0 +1,72 @@
+[
+  {
+    "code": "WN",
+    "name": "Southwest Airlines",
+    "name_ko": "사우스웨스트항공"
+  },
+  {
+    "code": "DL",
+    "name": "Delta Air Lines",
+    "name_ko": "델타항공"
+  },
+  {
+    "code": "AA",
+    "name": "American Airlines",
+    "name_ko": "아메리칸항공"
+  },
+  {
+    "code": "OO",
+    "name": "SkyWest Airlines",
+    "name_ko": "스카이웨스트"
+  },
+  {
+    "code": "UA",
+    "name": "United Airlines",
+    "name_ko": "유나이티드항공"
+  },
+  {
+    "code": "YX",
+    "name": "Republic Airways",
+    "name_ko": "리퍼블릭항공"
+  },
+  {
+    "code": "MQ",
+    "name": "Envoy Air",
+    "name_ko": "엔보이항공"
+  },
+  {
+    "code": "OH",
+    "name": "PSA Airlines",
+    "name_ko": "PSA항공"
+  },
+  {
+    "code": "AS",
+    "name": "Alaska Airlines",
+    "name_ko": "알래스카항공"
+  },
+  {
+    "code": "B6",
+    "name": "JetBlue Airways",
+    "name_ko": "제트블루"
+  },
+  {
+    "code": "F9",
+    "name": "Frontier Airlines",
+    "name_ko": "프론티어항공"
+  },
+  {
+    "code": "NK",
+    "name": "Spirit Airlines",
+    "name_ko": "스피릿항공"
+  },
+  {
+    "code": "G4",
+    "name": "Allegiant Air",
+    "name_ko": "얼리전트항공"
+  },
+  {
+    "code": "HA",
+    "name": "Hawaiian Airlines",
+    "name_ko": "하와이안항공"
+  }
+]

@@ -1,0 +1,6 @@
+flask>=3.0
+pytest>=8.0
+# 실제 모델 로딩/학습용 (models/*.joblib 이 있을 때 필요)
+scikit-learn>=1.4
+pandas>=2.1
+joblib>=1.3

@@ -1,0 +1,1510 @@
+[
+  {
+    "code": "ORD",
+    "name": "Chicago O'Hare",
+    "name_ko": "시카고 오헤어"
+  },
+  {
+    "code": "DEN",
+    "name": "Denver",
+    "name_ko": "덴버"
+  },
+  {
+    "code": "DFW",
+    "name": "Dallas/Fort Worth",
+    "name_ko": "댈러스/포트워스"
+  },
+  {
+    "code": "ATL",
+    "name": "Atlanta",
+    "name_ko": "애틀랜타"
+  },
+  {
+    "code": "PHX",
+    "name": "Phoenix",
+    "name_ko": "피닉스"
+  },
+  {
+    "code": "CLT",
+    "name": "Charlotte",
+    "name_ko": "샬럿"
+  },
+  {
+    "code": "LAX",
+    "name": "Los Angeles",
+    "name_ko": "로스앤젤레스"
+  },
+  {
+    "code": "LAS",
+    "name": "Las Vegas",
+    "name_ko": "라스베이거스"
+  },
+  {
+    "code": "SEA",
+    "name": "Seattle",
+    "name_ko": "시애틀"
+  },
+  {
+    "code": "MCO",
+    "name": "Orlando",
+    "name_ko": "올랜도"
+  },
+  {
+    "code": "SFO",
+    "name": "San Francisco",
+    "name_ko": "샌프란시스코"
+  },
+  {
+    "code": "BOS",
+    "name": "Boston",
+    "name_ko": "보스턴"
+  },
+  {
+    "code": "DCA",
+    "name": "Washington Reagan",
+    "name_ko": "워싱턴 레이건"
+  },
+  {
+    "code": "LGA",
+    "name": "New York LaGuardia",
+    "name_ko": "뉴욕 라과디아"
+  },
+  {
+    "code": "DTW",
+    "name": "Detroit",
+    "name_ko": "디트로이트"
+  },
+  {
+    "code": "EWR",
+    "name": "Newark",
+    "name_ko": "뉴어크"
+  },
+  {
+    "code": "IAH",
+    "name": "Houston Intercontinental",
+    "name_ko": "휴스턴 인터컨티넨털"
+  },
+  {
+    "code": "SLC",
+    "name": "Salt Lake City",
+    "name_ko": "솔트레이크시티"
+  },
+  {
+    "code": "MSP",
+    "name": "Minneapolis",
+    "name_ko": "미니애폴리스"
+  },
+  {
+    "code": "MIA",
+    "name": "Miami",
+    "name_ko": "마이애미"
+  },
+  {
+    "code": "BNA",
+    "name": "Nashville",
+    "name_ko": "내슈빌"
+  },
+  {
+    "code": "JFK",
+    "name": "New York JFK",
+    "name_ko": "뉴욕 JFK"
+  },
+  {
+    "code": "PHL",
+    "name": "Philadelphia",
+    "name_ko": "필라델피아"
+  },
+  {
+    "code": "SAN",
+    "name": "San Diego",
+    "name_ko": "샌디에이고"
+  },
+  {
+    "code": "BWI",
+    "name": "Baltimore/Washington",
+    "name_ko": "볼티모어/워싱턴"
+  },
+  {
+    "code": "FLL",
+    "name": "Fort Lauderdale",
+    "name_ko": "포트로더데일"
+  },
+  {
+    "code": "AUS",
+    "name": "Austin",
+    "name_ko": "오스틴"
+  },
+  {
+    "code": "TPA",
+    "name": "Tampa",
+    "name_ko": "탬파"
+  },
+  {
+    "code": "MDW",
+    "name": "Chicago Midway",
+    "name_ko": "시카고 미드웨이"
+  },
+  {
+    "code": "DAL",
+    "name": "Dallas Love Field",
+    "name_ko": "댈러스 러브필드"
+  },
+  {
+    "code": "STL",
+    "name": "St. Louis",
+    "name_ko": "세인트루이스"
+  },
+  {
+    "code": "PDX",
+    "name": "Portland (OR)",
+    "name_ko": "포틀랜드(오리건)"
+  },
+  {
+    "code": "HNL",
+    "name": "Honolulu",
+    "name_ko": "호놀룰루"
+  },
+  {
+    "code": "SMF",
+    "name": "Sacramento",
+    "name_ko": "새크라멘토"
+  },
+  {
+    "code": "IAD",
+    "name": "Washington Dulles",
+    "name_ko": "워싱턴 덜레스"
+  },
+  {
+    "code": "RDU",
+    "name": "Raleigh/Durham",
+    "name_ko": "롤리/더럼"
+  },
+  {
+    "code": "HOU",
+    "name": "Houston Hobby",
+    "name_ko": "휴스턴 호비"
+  },
+  {
+    "code": "MSY",
+    "name": "New Orleans",
+    "name_ko": "뉴올리언스"
+  },
+  {
+    "code": "MCI",
+    "name": "Kansas City",
+    "name_ko": "캔자스시티"
+  },
+  {
+    "code": "IND",
+    "name": "Indianapolis",
+    "name_ko": "인디애나폴리스"
+  },
+  {
+    "code": "SJC",
+    "name": "San Jose",
+    "name_ko": "산호세"
+  },
+  {
+    "code": "SNA",
+    "name": "Santa Ana (Orange County)",
+    "name_ko": "샌타애나(오렌지카운티)"
+  },
+  {
+    "code": "CMH",
+    "name": "Columbus",
+    "name_ko": "콜럼버스"
+  },
+  {
+    "code": "PIT",
+    "name": "Pittsburgh",
+    "name_ko": "피츠버그"
+  },
+  {
+    "code": "SAT",
+    "name": "San Antonio",
+    "name_ko": "샌안토니오"
+  },
+  {
+    "code": "CLE",
+    "name": "Cleveland",
+    "name_ko": "클리블랜드"
+  },
+  {
+    "code": "SJU",
+    "name": "San Juan",
+    "name_ko": "산후안"
+  },
+  {
+    "code": "RSW",
+    "name": "Fort Myers",
+    "name_ko": "포트마이어스"
+  },
+  {
+    "code": "OAK",
+    "name": "Oakland",
+    "name_ko": "오클랜드"
+  },
+  {
+    "code": "CVG",
+    "name": "Cincinnati",
+    "name_ko": "신시내티"
+  },
+  {
+    "code": "PBI",
+    "name": "West Palm Beach",
+    "name_ko": "웨스트팜비치"
+  },
+  {
+    "code": "BUR",
+    "name": "Burbank",
+    "name_ko": "버뱅크"
+  },
+  {
+    "code": "JAX",
+    "name": "Jacksonville",
+    "name_ko": "잭슨빌"
+  },
+  {
+    "code": "MKE",
+    "name": "Milwaukee",
+    "name_ko": "밀워키"
+  },
+  {
+    "code": "ONT",
+    "name": "Ontario (CA)",
+    "name_ko": "온타리오(캘리포니아)"
+  },
+  {
+    "code": "OGG",
+    "name": "Kahului (Maui)",
+    "name_ko": "카훌루이(마우이)"
+  },
+  {
+    "code": "ABQ",
+    "name": "Albuquerque",
+    "name_ko": "앨버커키"
+  },
+  {
+    "code": "OMA",
+    "name": "Omaha",
+    "name_ko": "오마하"
+  },
+  {
+    "code": "CHS",
+    "name": "Charleston (SC)",
+    "name_ko": "찰스턴"
+  },
+  {
+    "code": "OKC",
+    "name": "Oklahoma City",
+    "name_ko": "오클라호마시티"
+  },
+  {
+    "code": "MEM",
+    "name": "Memphis",
+    "name_ko": "멤피스"
+  },
+  {
+    "code": "BOI",
+    "name": "Boise",
+    "name_ko": "보이시"
+  },
+  {
+    "code": "BDL",
+    "name": "Hartford",
+    "name_ko": "하트퍼드"
+  },
+  {
+    "code": "SDF",
+    "name": "Louisville",
+    "name_ko": "루이빌"
+  },
+  {
+    "code": "RNO",
+    "name": "Reno/Tahoe",
+    "name_ko": "리노/타호"
+  },
+  {
+    "code": "BUF",
+    "name": "Buffalo",
+    "name_ko": "버펄로"
+  },
+  {
+    "code": "TUS",
+    "name": "Tucson",
+    "name_ko": "투손"
+  },
+  {
+    "code": "ORF",
+    "name": "Norfolk",
+    "name_ko": "노퍽"
+  },
+  {
+    "code": "SAV",
+    "name": "Savannah",
+    "name_ko": "서배너"
+  },
+  {
+    "code": "ANC",
+    "name": "Anchorage",
+    "name_ko": "앵커리지"
+  },
+  {
+    "code": "GRR",
+    "name": "Grand Rapids",
+    "name_ko": "그랜드래피즈"
+  },
+  {
+    "code": "TUL",
+    "name": "Tulsa",
+    "name_ko": "털사"
+  },
+  {
+    "code": "GEG",
+    "name": "Spokane",
+    "name_ko": "스포캔"
+  },
+  {
+    "code": "RIC",
+    "name": "Richmond",
+    "name_ko": "리치먼드"
+  },
+  {
+    "code": "SRQ",
+    "name": "Sarasota/Bradenton",
+    "name_ko": "새러소타/브레이든턴"
+  },
+  {
+    "code": "ELP",
+    "name": "El Paso",
+    "name_ko": "엘패소"
+  },
+  {
+    "code": "BHM",
+    "name": "Birmingham",
+    "name_ko": "버밍햄"
+  },
+  {
+    "code": "LGB",
+    "name": "Long Beach",
+    "name_ko": "롱비치"
+  },
+  {
+    "code": "KOA",
+    "name": "Kona",
+    "name_ko": "코나"
+  },
+  {
+    "code": "LIH",
+    "name": "Lihue (Kauai)",
+    "name_ko": "리후에(카우아이)"
+  },
+  {
+    "code": "PVD",
+    "name": "Providence",
+    "name_ko": "프로비던스"
+  },
+  {
+    "code": "PSP",
+    "name": "Palm Springs",
+    "name_ko": "팜스프링스"
+  },
+  {
+    "code": "DSM",
+    "name": "Des Moines",
+    "name_ko": "디모인"
+  },
+  {
+    "code": "MYR",
+    "name": "Myrtle Beach",
+    "name_ko": "머틀비치"
+  },
+  {
+    "code": "GSP",
+    "name": "Greenville/Spartanburg",
+    "name_ko": "그린빌/스파턴버그"
+  },
+  {
+    "code": "PNS",
+    "name": "Pensacola",
+    "name_ko": "펜서콜라"
+  },
+  {
+    "code": "COS",
+    "name": "Colorado Springs",
+    "name_ko": "콜로라도스프링스"
+  },
+  {
+    "code": "FAT",
+    "name": "Fresno",
+    "name_ko": "프레즈노"
+  },
+  {
+    "code": "TYS",
+    "name": "Knoxville",
+    "name_ko": "녹스빌"
+  },
+  {
+    "code": "LIT",
+    "name": "Little Rock",
+    "name_ko": "리틀록"
+  },
+  {
+    "code": "XNA",
+    "name": "Northwest Arkansas",
+    "name_ko": "노스웨스트아칸소"
+  },
+  {
+    "code": "MSN",
+    "name": "Madison",
+    "name_ko": "매디슨"
+  },
+  {
+    "code": "ALB",
+    "name": "Albany",
+    "name_ko": "올버니"
+  },
+  {
+    "code": "ICT",
+    "name": "Wichita",
+    "name_ko": "위치토"
+  },
+  {
+    "code": "BZN",
+    "name": "Bozeman",
+    "name_ko": "보즈먼"
+  },
+  {
+    "code": "HPN",
+    "name": "White Plains",
+    "name_ko": "화이트플레인스"
+  },
+  {
+    "code": "PWM",
+    "name": "Portland (ME)",
+    "name_ko": "포틀랜드(메인)"
+  },
+  {
+    "code": "VPS",
+    "name": "Destin/Fort Walton Beach",
+    "name_ko": "데스틴/포트월턴비치"
+  },
+  {
+    "code": "SFB",
+    "name": "Orlando Sanford",
+    "name_ko": "올랜도 샌퍼드"
+  },
+  {
+    "code": "SYR",
+    "name": "Syracuse",
+    "name_ko": "시러큐스"
+  },
+  {
+    "code": "GSO",
+    "name": "Greensboro"
+  },
+  {
+    "code": "AVL",
+    "name": "Asheville"
+  },
+  {
+    "code": "ROC",
+    "name": "Rochester (NY)"
+  },
+  {
+    "code": "MAF",
+    "name": "Midland"
+  },
+  {
+    "code": "PIE",
+    "name": "Saint Petersburg"
+  },
+  {
+    "code": "LEX",
+    "name": "Lexington (KY)"
+  },
+  {
+    "code": "SGF",
+    "name": "Springfield (MO)"
+  },
+  {
+    "code": "ECP",
+    "name": "Panama City"
+  },
+  {
+    "code": "HSV",
+    "name": "Huntsville/Madison"
+  },
+  {
+    "code": "EUG",
+    "name": "Eugene"
+  },
+  {
+    "code": "SBA",
+    "name": "Santa Barbara"
+  },
+  {
+    "code": "CID",
+    "name": "Cedar Rapids"
+  },
+  {
+    "code": "DAY",
+    "name": "Dayton"
+  },
+  {
+    "code": "SBN",
+    "name": "South Bend"
+  },
+  {
+    "code": "EYW",
+    "name": "Key West"
+  },
+  {
+    "code": "PGD",
+    "name": "Punta Gorda"
+  },
+  {
+    "code": "ASE",
+    "name": "Aspen"
+  },
+  {
+    "code": "ILM",
+    "name": "Wilmington (NC)"
+  },
+  {
+    "code": "ATW",
+    "name": "Appleton"
+  },
+  {
+    "code": "FSD",
+    "name": "Sioux Falls"
+  },
+  {
+    "code": "FAR",
+    "name": "Fargo"
+  },
+  {
+    "code": "ITO",
+    "name": "Hilo"
+  },
+  {
+    "code": "FWA",
+    "name": "Fort Wayne"
+  },
+  {
+    "code": "LBB",
+    "name": "Lubbock"
+  },
+  {
+    "code": "BTV",
+    "name": "Burlington (VT)"
+  },
+  {
+    "code": "AZA",
+    "name": "Phoenix-Mesa Gateway"
+  },
+  {
+    "code": "PSC",
+    "name": "Pasco/Tri-Cities (WA)"
+  },
+  {
+    "code": "JAC",
+    "name": "Jackson Hole"
+  },
+  {
+    "code": "RDM",
+    "name": "Redmond/Bend (OR)"
+  },
+  {
+    "code": "JAN",
+    "name": "Jackson (MS)"
+  },
+  {
+    "code": "MHT",
+    "name": "Manchester (NH)"
+  },
+  {
+    "code": "SHV",
+    "name": "Shreveport"
+  },
+  {
+    "code": "CAE",
+    "name": "Columbia (SC)"
+  },
+  {
+    "code": "PIA",
+    "name": "Peoria"
+  },
+  {
+    "code": "SBP",
+    "name": "San Luis Obispo"
+  },
+  {
+    "code": "ISP",
+    "name": "Long Island/Islip"
+  },
+  {
+    "code": "RAP",
+    "name": "Rapid City"
+  },
+  {
+    "code": "AMA",
+    "name": "Amarillo"
+  },
+  {
+    "code": "TVC",
+    "name": "Traverse City"
+  },
+  {
+    "code": "CHA",
+    "name": "Chattanooga"
+  },
+  {
+    "code": "MDT",
+    "name": "Harrisburg"
+  },
+  {
+    "code": "STT",
+    "name": "St. Thomas"
+  },
+  {
+    "code": "MRY",
+    "name": "Monterey Peninsula"
+  },
+  {
+    "code": "MFE",
+    "name": "McAllen"
+  },
+  {
+    "code": "BIL",
+    "name": "Billings"
+  },
+  {
+    "code": "JNU",
+    "name": "Juneau"
+  },
+  {
+    "code": "GJT",
+    "name": "Grand Junction"
+  },
+  {
+    "code": "STS",
+    "name": "Santa Rosa"
+  },
+  {
+    "code": "MFR",
+    "name": "Medford (OR)"
+  },
+  {
+    "code": "SGU",
+    "name": "St George"
+  },
+  {
+    "code": "BTR",
+    "name": "Baton Rouge"
+  },
+  {
+    "code": "TLH",
+    "name": "Tallahassee"
+  },
+  {
+    "code": "MSO",
+    "name": "Missoula"
+  },
+  {
+    "code": "IDA",
+    "name": "Idaho Falls"
+  },
+  {
+    "code": "FCA",
+    "name": "Kalispell"
+  },
+  {
+    "code": "HRL",
+    "name": "Harlingen"
+  },
+  {
+    "code": "GRB",
+    "name": "Green Bay"
+  },
+  {
+    "code": "BIS",
+    "name": "Bismarck"
+  },
+  {
+    "code": "CAK",
+    "name": "Akron / Canton"
+  },
+  {
+    "code": "DRO",
+    "name": "Durango"
+  },
+  {
+    "code": "MLI",
+    "name": "Moline"
+  },
+  {
+    "code": "CRP",
+    "name": "Corpus Christi"
+  },
+  {
+    "code": "EGE",
+    "name": "Vail/Eagle"
+  },
+  {
+    "code": "FAI",
+    "name": "Fairbanks"
+  },
+  {
+    "code": "SAF",
+    "name": "Santa Fe"
+  },
+  {
+    "code": "BGR",
+    "name": "Bangor"
+  },
+  {
+    "code": "GPT",
+    "name": "Gulfport-Biloxi"
+  },
+  {
+    "code": "FNT",
+    "name": "Flint"
+  },
+  {
+    "code": "DAB",
+    "name": "Daytona Beach"
+  },
+  {
+    "code": "BFL",
+    "name": "Bakersfield"
+  },
+  {
+    "code": "ABE",
+    "name": "Allentown-Bethlehem"
+  },
+  {
+    "code": "PVU",
+    "name": "Provo"
+  },
+  {
+    "code": "MLB",
+    "name": "Melbourne Orlando"
+  },
+  {
+    "code": "CRW",
+    "name": "Charleston (WV)"
+  },
+  {
+    "code": "LNK",
+    "name": "Lincoln"
+  },
+  {
+    "code": "MOT",
+    "name": "Minot"
+  },
+  {
+    "code": "GNV",
+    "name": "Gainesville"
+  },
+  {
+    "code": "LFT",
+    "name": "Lafayette (LA)"
+  },
+  {
+    "code": "ACY",
+    "name": "Atlantic City"
+  },
+  {
+    "code": "SUN",
+    "name": "Sun Valley/Hailey"
+  },
+  {
+    "code": "COU",
+    "name": "Columbia (MO)"
+  },
+  {
+    "code": "GTF",
+    "name": "Great Falls"
+  },
+  {
+    "code": "MTJ",
+    "name": "Montrose (CO)"
+  },
+  {
+    "code": "BLI",
+    "name": "Bellingham"
+  },
+  {
+    "code": "CPR",
+    "name": "Casper"
+  },
+  {
+    "code": "KTN",
+    "name": "Ketchikan"
+  },
+  {
+    "code": "XWA",
+    "name": "Williston Basin"
+  },
+  {
+    "code": "HDN",
+    "name": "Steamboat Springs/Hayden"
+  },
+  {
+    "code": "MBS",
+    "name": "Saginaw"
+  },
+  {
+    "code": "AGS",
+    "name": "Augusta (GA)"
+  },
+  {
+    "code": "BQN",
+    "name": "Aguadilla"
+  },
+  {
+    "code": "DLH",
+    "name": "Duluth"
+  },
+  {
+    "code": "HHH",
+    "name": "Hilton Head Island"
+  },
+  {
+    "code": "MGM",
+    "name": "Montgomery"
+  },
+  {
+    "code": "ACV",
+    "name": "Arcata/Eureka"
+  },
+  {
+    "code": "LAN",
+    "name": "Lansing"
+  },
+  {
+    "code": "EVV",
+    "name": "Evansville"
+  },
+  {
+    "code": "GRK",
+    "name": "Killeen/Fort Hood"
+  },
+  {
+    "code": "LRD",
+    "name": "Laredo"
+  },
+  {
+    "code": "ROA",
+    "name": "Roanoke"
+  },
+  {
+    "code": "ABI",
+    "name": "Abilene"
+  },
+  {
+    "code": "FLG",
+    "name": "Flagstaff"
+  },
+  {
+    "code": "BMI",
+    "name": "Bloomington (IL)"
+  },
+  {
+    "code": "MOB",
+    "name": "Mobile"
+  },
+  {
+    "code": "RDD",
+    "name": "Redding"
+  },
+  {
+    "code": "YUM",
+    "name": "Yuma"
+  },
+  {
+    "code": "HLN",
+    "name": "Helena"
+  },
+  {
+    "code": "CMI",
+    "name": "Champaign"
+  },
+  {
+    "code": "AZO",
+    "name": "Kalamazoo"
+  },
+  {
+    "code": "ACK",
+    "name": "Nantucket"
+  },
+  {
+    "code": "BRO",
+    "name": "Brownsville"
+  },
+  {
+    "code": "MHK",
+    "name": "Manhattan (KS)"
+  },
+  {
+    "code": "AVP",
+    "name": "Wilkes-Barre/Scranton"
+  },
+  {
+    "code": "CHO",
+    "name": "Charlottesville"
+  },
+  {
+    "code": "STX",
+    "name": "St. Croix Island"
+  },
+  {
+    "code": "BLV",
+    "name": "Belleville/Scott (IL)"
+  },
+  {
+    "code": "MQT",
+    "name": "Marquette"
+  },
+  {
+    "code": "SIT",
+    "name": "Sitka"
+  },
+  {
+    "code": "TRI",
+    "name": "Tri-Cities (TN)"
+  },
+  {
+    "code": "ELM",
+    "name": "Elmira/Corning"
+  },
+  {
+    "code": "CLL",
+    "name": "College Station"
+  },
+  {
+    "code": "LCH",
+    "name": "Lake Charles"
+  },
+  {
+    "code": "LCK",
+    "name": "Columbus Rickenbacker"
+  },
+  {
+    "code": "FSM",
+    "name": "Fort Smith"
+  },
+  {
+    "code": "GUC",
+    "name": "Gunnison"
+  },
+  {
+    "code": "PAE",
+    "name": "Everett - Paine"
+  },
+  {
+    "code": "AEX",
+    "name": "Alexandria (LA)"
+  },
+  {
+    "code": "TTN",
+    "name": "Trenton"
+  },
+  {
+    "code": "ACT",
+    "name": "Waco"
+  },
+  {
+    "code": "SJT",
+    "name": "San Angelo"
+  },
+  {
+    "code": "TYR",
+    "name": "Tyler (TX)"
+  },
+  {
+    "code": "LAW",
+    "name": "Lawton"
+  },
+  {
+    "code": "MLU",
+    "name": "Monroe (LA)"
+  },
+  {
+    "code": "MVY",
+    "name": "Martha's Vineyard"
+  },
+  {
+    "code": "RST",
+    "name": "Rochester (MN)"
+  },
+  {
+    "code": "GRI",
+    "name": "Grand Island"
+  },
+  {
+    "code": "SLN",
+    "name": "Salina"
+  },
+  {
+    "code": "ORH",
+    "name": "Worcester"
+  },
+  {
+    "code": "ROW",
+    "name": "Roswell (NM)"
+  },
+  {
+    "code": "RFD",
+    "name": "Rockford"
+  },
+  {
+    "code": "COD",
+    "name": "Cody"
+  },
+  {
+    "code": "RHI",
+    "name": "Rhinelander"
+  },
+  {
+    "code": "PLN",
+    "name": "Pellston"
+  },
+  {
+    "code": "LSE",
+    "name": "La Crosse"
+  },
+  {
+    "code": "ABY",
+    "name": "Albany (GA)"
+  },
+  {
+    "code": "CIU",
+    "name": "Sault Ste. Marie"
+  },
+  {
+    "code": "ADQ",
+    "name": "Kodiak"
+  },
+  {
+    "code": "GFK",
+    "name": "Grand Forks"
+  },
+  {
+    "code": "CMX",
+    "name": "Hancock"
+  },
+  {
+    "code": "PRC",
+    "name": "Prescott (AZ)"
+  },
+  {
+    "code": "LWS",
+    "name": "Lewiston"
+  },
+  {
+    "code": "ABR",
+    "name": "Aberdeen"
+  },
+  {
+    "code": "CWA",
+    "name": "Wausau"
+  },
+  {
+    "code": "CYS",
+    "name": "Cheyenne"
+  },
+  {
+    "code": "SHR",
+    "name": "Sheridan (WY)"
+  },
+  {
+    "code": "GUM",
+    "name": "Guam"
+  },
+  {
+    "code": "GCC",
+    "name": "Gillette"
+  },
+  {
+    "code": "HOB",
+    "name": "Hobbs (NM)"
+  },
+  {
+    "code": "GCK",
+    "name": "Garden City"
+  },
+  {
+    "code": "RKS",
+    "name": "Rock Springs"
+  },
+  {
+    "code": "SUX",
+    "name": "Sioux City"
+  },
+  {
+    "code": "SWO",
+    "name": "Stillwater"
+  },
+  {
+    "code": "RIW",
+    "name": "Riverton"
+  },
+  {
+    "code": "SPS",
+    "name": "Wichita Falls"
+  },
+  {
+    "code": "BJI",
+    "name": "Bemidji"
+  },
+  {
+    "code": "IMT",
+    "name": "Iron Mountain"
+  },
+  {
+    "code": "GGG",
+    "name": "Longview (TX)"
+  },
+  {
+    "code": "TXK",
+    "name": "Texarkana"
+  },
+  {
+    "code": "MGW",
+    "name": "Morgantown (WV)"
+  },
+  {
+    "code": "BPT",
+    "name": "Beaumont - Port Arthur"
+  },
+  {
+    "code": "JST",
+    "name": "Johnstown/Cambria"
+  },
+  {
+    "code": "JLN",
+    "name": "Joplin"
+  },
+  {
+    "code": "YAK",
+    "name": "Yakutat"
+  },
+  {
+    "code": "PSG",
+    "name": "Petersburg"
+  },
+  {
+    "code": "WRG",
+    "name": "Wrangell"
+  },
+  {
+    "code": "CDV",
+    "name": "Cordova (AK)"
+  },
+  {
+    "code": "BET",
+    "name": "Bethel"
+  },
+  {
+    "code": "TWF",
+    "name": "Twin Falls"
+  },
+  {
+    "code": "USA",
+    "name": "Concord (NC)"
+  },
+  {
+    "code": "BTM",
+    "name": "Butte"
+  },
+  {
+    "code": "DIK",
+    "name": "Dickinson"
+  },
+  {
+    "code": "PSE",
+    "name": "Ponce"
+  },
+  {
+    "code": "INL",
+    "name": "International Falls"
+  },
+  {
+    "code": "JMS",
+    "name": "Jamestown"
+  },
+  {
+    "code": "DVL",
+    "name": "Devils Lake"
+  },
+  {
+    "code": "CLD",
+    "name": "Carlsbad/Palomar"
+  },
+  {
+    "code": "BRD",
+    "name": "Brainerd"
+  },
+  {
+    "code": "APN",
+    "name": "Alpena"
+  },
+  {
+    "code": "ESC",
+    "name": "Escanaba"
+  },
+  {
+    "code": "CDC",
+    "name": "Cedar City"
+  },
+  {
+    "code": "MCW",
+    "name": "Mason City"
+  },
+  {
+    "code": "EAU",
+    "name": "Eau Claire"
+  },
+  {
+    "code": "LAR",
+    "name": "Laramie"
+  },
+  {
+    "code": "PIB",
+    "name": "Hattiesburg/Laurel"
+  },
+  {
+    "code": "FOD",
+    "name": "Fort Dodge"
+  },
+  {
+    "code": "DEC",
+    "name": "Decatur"
+  },
+  {
+    "code": "HIB",
+    "name": "Hibbing"
+  },
+  {
+    "code": "HYS",
+    "name": "Hays"
+  },
+  {
+    "code": "LBL",
+    "name": "Liberal"
+  },
+  {
+    "code": "DDC",
+    "name": "Dodge City"
+  },
+  {
+    "code": "MEI",
+    "name": "Meridian (MS)"
+  },
+  {
+    "code": "SPI",
+    "name": "Springfield (IL)"
+  },
+  {
+    "code": "EAR",
+    "name": "Kearney"
+  },
+  {
+    "code": "BFF",
+    "name": "Scottsbluff"
+  },
+  {
+    "code": "LBF",
+    "name": "North Platte"
+  },
+  {
+    "code": "SWF",
+    "name": "Newburgh/Stewart"
+  },
+  {
+    "code": "VCT",
+    "name": "Victoria"
+  },
+  {
+    "code": "SCK",
+    "name": "Stockton"
+  },
+  {
+    "code": "PIH",
+    "name": "Pocatello"
+  },
+  {
+    "code": "HTS",
+    "name": "Huntington (WV)"
+  },
+  {
+    "code": "SCC",
+    "name": "Deadhorse"
+  },
+  {
+    "code": "PBG",
+    "name": "Plattsburgh"
+  },
+  {
+    "code": "PSM",
+    "name": "Portsmouth (NH)"
+  },
+  {
+    "code": "EKO",
+    "name": "Elko"
+  },
+  {
+    "code": "LBE",
+    "name": "Latrobe (PA)"
+  },
+  {
+    "code": "IAG",
+    "name": "Niagara Falls"
+  },
+  {
+    "code": "OTH",
+    "name": "North Bend (OR)"
+  },
+  {
+    "code": "SCE",
+    "name": "State College"
+  },
+  {
+    "code": "TOL",
+    "name": "Toledo"
+  },
+  {
+    "code": "ALO",
+    "name": "Waterloo (IA)"
+  },
+  {
+    "code": "HYA",
+    "name": "Hyannis"
+  },
+  {
+    "code": "SPN",
+    "name": "Saipan"
+  },
+  {
+    "code": "PQI",
+    "name": "Presque Isle"
+  },
+  {
+    "code": "OTZ",
+    "name": "Kotzebue"
+  },
+  {
+    "code": "BRW",
+    "name": "Utqiagvik (Barrow)"
+  },
+  {
+    "code": "OME",
+    "name": "Nome"
+  },
+  {
+    "code": "FAY",
+    "name": "Fayetteville (NC)"
+  },
+  {
+    "code": "OAJ",
+    "name": "Jacksonville (NC)"
+  },
+  {
+    "code": "WYS",
+    "name": "West Yellowstone"
+  },
+  {
+    "code": "GUF",
+    "name": "Gulf Shores"
+  },
+  {
+    "code": "HGR",
+    "name": "Hagerstown"
+  },
+  {
+    "code": "ATY",
+    "name": "Watertown (SD)"
+  },
+  {
+    "code": "BIH",
+    "name": "Bishop"
+  },
+  {
+    "code": "PIR",
+    "name": "Pierre"
+  },
+  {
+    "code": "EWN",
+    "name": "New Bern (NC)"
+  },
+  {
+    "code": "SMX",
+    "name": "Santa Maria (CA)"
+  },
+  {
+    "code": "GTR",
+    "name": "Columbus (MS) Golden Triangle"
+  },
+  {
+    "code": "FMN",
+    "name": "Farmington"
+  },
+  {
+    "code": "LAF",
+    "name": "Lafayette (IN)"
+  },
+  {
+    "code": "BGM",
+    "name": "Binghamton"
+  },
+  {
+    "code": "CKB",
+    "name": "Clarksburg (WV)"
+  },
+  {
+    "code": "STC",
+    "name": "St. Cloud"
+  },
+  {
+    "code": "AKN",
+    "name": "King Salmon"
+  },
+  {
+    "code": "PPG",
+    "name": "Pago Pago"
+  },
+  {
+    "code": "DLG",
+    "name": "Dillingham"
+  },
+  {
+    "code": "ADK",
+    "name": "Adak (AK)"
+  },
+  {
+    "code": "GST",
+    "name": "Gustavus"
+  },
+  {
+    "code": "DHN",
+    "name": "Dothan"
+  },
+  {
+    "code": "VRB",
+    "name": "Vero Beach"
+  },
+  {
+    "code": "ERI",
+    "name": "Erie"
+  },
+  {
+    "code": "ITH",
+    "name": "Ithaca"
+  },
+  {
+    "code": "PHF",
+    "name": "Newport News"
+  }
+]
